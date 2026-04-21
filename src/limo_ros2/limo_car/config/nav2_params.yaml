@@ -78,15 +78,15 @@ controller_server:
     general_goal_checker:
       stateful: true
       plugin: "nav2_controller::SimpleGoalChecker"
-      xy_goal_tolerance: 0.50
-      yaw_goal_tolerance: 0.50
+      xy_goal_tolerance: 1.0
+      yaw_goal_tolerance: 3.14
     FollowPath:
       plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
-      desired_linear_vel: 0.2
-      min_approach_linear_velocity: 0.1
-      approach_velocity_scaling_dist: 0.6
-      lookahead_dist: 0.6
-      min_lookahead_dist: 0.4
+      desired_linear_vel: 0.11
+      min_approach_linear_velocity: 0.05
+      approach_velocity_scaling_dist: 1.0
+      lookahead_dist: 0.5
+      min_lookahead_dist: 0.3
       max_lookahead_dist: 1.0
       lookahead_time: 1.5
       use_velocity_scaled_lookahead_dist: true
@@ -99,7 +99,7 @@ controller_server:
       use_collision_detection: false
       transform_tolerance: 1.0
       max_robot_pose_search_dist: 10.0
-      allow_reversing: false
+      allow_reversing: true
 # ------------------------------------------------------------
 local_costmap:
   local_costmap:
@@ -203,7 +203,7 @@ planner_server:
     planner_plugins: ["GridBased"]
     GridBased:
       plugin: "nav2_smac_planner/SmacPlannerHybrid"
-      minimum_turning_radius: 0.45
+      minimum_turning_radius: 0.55
       motion_model_for_search: "DUBIN"
       allow_unknown: true
       max_planning_time: 5.0
@@ -212,7 +212,7 @@ planner_server:
       tolerance: 0.25
       analytic_expansion_ratio: 3.5
       analytic_expansion_max_length: 3.0
-      cost_travel_multiplier: 2.0
+      cost_travel_multiplier: 3.5
       lookup_table_size: 20.0
       max_iterations: 1000000
       max_on_approach_iterations: 1000
@@ -249,7 +249,7 @@ behavior_server:
     behavior_plugins: ["spin", "backup", "drive_on_heading", "wait"]
     backup:
       plugin: "nav2_behaviors/BackUp"
-      backup_dist: 0.30
+      backup_dist: 1.5
       backup_speed: 0.08
     drive_on_heading:
       plugin: "nav2_behaviors/DriveOnHeading"
