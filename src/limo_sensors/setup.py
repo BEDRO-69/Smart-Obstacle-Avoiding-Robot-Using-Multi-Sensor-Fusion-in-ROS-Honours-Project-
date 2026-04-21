@@ -24,8 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-        'ultrasonic_publisher = limo_sensors.ultrasonic_publisher:main',
-        'sensor_fusion = limo_sensors.sensor_fusion:main',
+        'smart_backup = limo_sensors.smart_backup:main',
+        'ultrasonic_relay = limo_sensors.ultrasonic_relay:main',
         ],
     },
 )

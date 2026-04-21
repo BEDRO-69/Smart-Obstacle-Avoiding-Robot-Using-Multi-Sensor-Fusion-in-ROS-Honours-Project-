@@ -182,6 +182,17 @@ in externen Dateien.-->
     <xacro:limo_imu parent_prefix="base_link" frame_prefix="imu">
         <origin xyz="0.0 0 -0.1" rpy="0 0 0"/>
     </xacro:limo_imu>
+    <!-- Front ultrasonic sensor — mounted just ahead of the front face, centred -->
+    <xacro:limo_ultrasonic_front parent_prefix="base_link" frame_prefix="ultrasonic_front">
+    <origin xyz="0.068 0.0 -0.02" rpy="0 0 0"/>
+    </xacro:limo_ultrasonic_front>
+    <xacro:limo_ultrasonic_left parent_prefix="base_link" frame_prefix="ultrasonic_left">
+      <origin xyz="0.050 0.07 -0.02" rpy="0 0 0.7854"/>
+    </xacro:limo_ultrasonic_left>
+
+    <xacro:limo_ultrasonic_right parent_prefix="base_link" frame_prefix="ultrasonic_right">
+      <origin xyz="0.050 -0.07 -0.02" rpy="0 0 -0.7854"/>
+    </xacro:limo_ultrasonic_right>
 
     <!-- ruft Steuerscharnier mit vorderem Räder auf -->
     <xacro:limo_left_steering_hinge parent_prefix="base_link" wheel_prefix="left_steering_hinge">

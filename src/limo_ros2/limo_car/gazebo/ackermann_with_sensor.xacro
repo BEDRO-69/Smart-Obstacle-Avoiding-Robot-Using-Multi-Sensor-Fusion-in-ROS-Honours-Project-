@@ -42,4 +42,27 @@ andere Sensoren zusammengebaut werden und laden sie das Modell in Gazebo.-->
         <parent link="base_link"/>
         <child link="imu_link"/>
     </joint>
+    <!-- ************************* Front Ultrasonic ******************* -->
+    <xacro:gazebo_ultrasonic_front frame_prefix="ultrasonic_front" />
+    <joint name="ultrasonic_front_joint" type="fixed">
+        <origin xyz="0.13 0.0 0.05" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="ultrasonic_front_link"/>
+    </joint>
+
+    <!-- ************************* Left Ultrasonic ******************* -->
+    <xacro:gazebo_ultrasonic_left frame_prefix="ultrasonic_left" />
+    <joint name="ultrasonic_left_joint" type="fixed">
+        <origin xyz="0.10 0.07 0.05" rpy="0 0 0.7854"/>
+        <parent link="base_link"/>
+        <child link="ultrasonic_left_link"/>
+    </joint>
+
+    <!-- ************************* Right Ultrasonic ******************* -->
+    <xacro:gazebo_ultrasonic_right frame_prefix="ultrasonic_right" />
+    <joint name="ultrasonic_right_joint" type="fixed">
+        <origin xyz="0.10 -0.07 0.05" rpy="0 0 -0.7854"/>
+        <parent link="base_link"/>
+        <child link="ultrasonic_right_link"/>
+    </joint>
 </robot>
